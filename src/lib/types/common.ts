@@ -1,6 +1,7 @@
 export interface BookingForm {
   title: string;
   fields: BookingFormFields;
+  submit: string;
   footer?: BookingFormFooter;
 }
 

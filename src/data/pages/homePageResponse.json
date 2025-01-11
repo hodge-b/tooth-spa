@@ -28,6 +28,7 @@
         "email": "Email",
         "message": "Message"
       },
+      "submit": "Send",
       "footer": {
         "overline": "or",
         "title": "Email",
