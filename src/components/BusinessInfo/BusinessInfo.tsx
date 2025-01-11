@@ -9,6 +9,7 @@ import type {
   BusinessInfoProps,
   BusinessInfoChildProps,
 } from "./BusinessInfo.types";
+import { SocialMedia } from "../SocialMedia";
 
 const BusinessInfoContext = createContext<BusinessInfoType | undefined>(
   undefined
@@ -75,17 +76,20 @@ const OfficeContactUs = ({ className }: BusinessInfoChildProps) => {
   );
 };
 
-const BusinessInfo = ({ data }: BusinessInfoProps) => {
+const BusinessInfo = ({ data, socialMedia }: BusinessInfoProps) => {
   return (
     <BusinessInfoContext.Provider value={data}>
       <div className="bg-gray-600 w-full text-white flex justify-center">
         <div className="flex flex-col md:flex-row justify-between p-4 max-w-6xl">
-          <div className="p-4 w-1/2">
-            <Typography variant="h2" className="text-4xl">
+          <div className="p-4 w-full md:w-1/2 mb-10 md:mb-0">
+            <Typography variant="h2" className="text-4xl font-bold">
               {data.title}
             </Typography>
             <div className="border border-accent my-4"></div>
             {data?.description && <Typography>{data?.description}</Typography>}
+            {socialMedia && (
+              <SocialMedia className="mt-20" data={socialMedia} />
+            )}
           </div>
           <div className="border p-4 rounded-md">
             <OfficeHours className="mt-10" />

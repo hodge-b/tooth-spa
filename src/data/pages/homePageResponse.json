@@ -16,8 +16,8 @@
       }
     },
     "comingSoon": {
-      "title": "Full website coming soon",
-      "subCopy": "We are building something amazing, stay tuned!"
+      "title": "Landing Soon",
+      "subCopy": "In the very near future, our website will be landing here. Until then, you can book appointments below. <br />See you soon."
     },
     "bookingForm": {
       "title": "Book an appointment",
@@ -76,6 +76,17 @@
         "title": "Contact Us",
         "email": "toothspadh@gmail.com"
       }
+    },
+    "socialMedia": {
+      "title": "Follow us on social media",
+      "medias": [
+        {
+          "id": 1,
+          "label": "Instagram",
+          "link": "https://www.instagram.com/toothspadh",
+          "icon": "Instagram"
+        }
+      ]
     }
   }
 }

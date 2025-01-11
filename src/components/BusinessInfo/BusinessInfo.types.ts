@@ -1,4 +1,4 @@
-import { BusinessInfoType } from "@/lib/types";
+import type { BusinessInfoType, SocialMediaType } from "@/lib/types";
 
 interface SharedProps {
   className?: string;
@@ -6,6 +6,7 @@ interface SharedProps {
 
 export interface BusinessInfoProps extends SharedProps {
   data: BusinessInfoType;
+  socialMedia?: SocialMediaType;
 }
 
 export interface BusinessInfoChildProps extends SharedProps {}

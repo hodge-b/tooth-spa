@@ -31,3 +31,15 @@ export interface Image {
   width: number;
   height: number;
 }
+
+export interface SocialMediaType {
+  title?: string;
+  medias: SocialMediaItem[];
+}
+
+export interface SocialMediaItem {
+  id: number;
+  label: string;
+  link: string;
+  icon?: string;
+}

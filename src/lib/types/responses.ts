@@ -1,4 +1,4 @@
-import { BookingFormType, HeroBanner } from "./common";
+import { BookingFormType, HeroBanner, SocialMediaType } from "./common";
 
 export interface BusinessInfoType {
   title: string;
@@ -18,6 +18,7 @@ export interface HomePage {
   comingSoon: ComingSoon;
   bookingForm: BookingFormType;
   businessInfo: BusinessInfoType;
+  socialMedia: SocialMediaType;
 }
 
 export interface OfficeContact {

@@ -10,7 +10,10 @@ export default function Home() {
       <div className="w-full flex flex-col items-center">
         <BookingForm data={homePageData.bookingForm} />
         <div className="my-10"></div>
-        <BusinessInfo data={homePageData.businessInfo} />
+        <BusinessInfo
+          data={homePageData.businessInfo}
+          socialMedia={homePageData.socialMedia}
+        />
       </div>
     </div>
   );
