@@ -11,7 +11,8 @@ export interface HomePage {
   officeHours: OfficeHours;
 }
 
-interface OfficeHours {
+export interface OfficeHours {
+  title: string;
   days: OfficeHourSchedule[];
   location: OfficeHourLocation;
 }

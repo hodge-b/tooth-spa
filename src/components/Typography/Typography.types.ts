@@ -1,9 +1,11 @@
-import type { ReactNode } from "react";
+import type { HTMLAttributes, ReactNode } from "react";
+import type { VariantProps } from "class-variance-authority";
 
-type TypographyVariant = "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
+import { typographyVariants } from "./Typography.variants";
 
-export interface TypographyProps {
+export interface TypographyProps
+  extends HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof typographyVariants> {
   className?: string;
   children: ReactNode;
-  variant?: TypographyVariant;
 }
