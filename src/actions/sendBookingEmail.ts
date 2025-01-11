@@ -17,6 +17,7 @@ export const onSubmitAction = async (
 
   if (!parsed.success) return { message: "Invalid form data" };
 
+  // Send email to business.
   resend.emails.send({
     from: sender,
     to: recipient,

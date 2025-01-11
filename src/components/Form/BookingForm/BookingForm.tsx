@@ -44,8 +44,10 @@ export const BookingForm = ({ data }: BookingFormProps) => {
   };
 
   return (
-    <div className="max-w-2xl w-full p-4">
-      <Typography variant="h2">{data.title}</Typography>
+    <div className="w-full p-4 max-w-6xl">
+      <Typography variant="h2" className="text-4xl">
+        {data.title}
+      </Typography>
       <div className="border border-accent my-5"></div>
       <div className="p-4 max-w-xl mx-auto">
         <Form {...form}>
@@ -58,10 +60,15 @@ export const BookingForm = ({ data }: BookingFormProps) => {
                 control={form.control}
                 name="firstName"
                 render={({ field }) => (
-                  <FormItem className="w-full md:w-1/2">
+                  <FormItem className="w-full md:w-1/2 ">
                     <FormLabel>{`${data.fields.firstName} *`}</FormLabel>
                     <FormControl>
-                      <Input placeholder="First name" type="text" {...field} />
+                      <Input
+                        placeholder="First name"
+                        type="text"
+                        {...field}
+                        className="bg-white"
+                      />
                     </FormControl>
 
                     <FormMessage />
@@ -75,7 +82,12 @@ export const BookingForm = ({ data }: BookingFormProps) => {
                   <FormItem className="w-full md:w-1/2">
                     <FormLabel>{`${data.fields.lastName} *`}</FormLabel>
                     <FormControl>
-                      <Input placeholder="Last name" type="text" {...field} />
+                      <Input
+                        placeholder="Last name"
+                        type="text"
+                        {...field}
+                        className="bg-white"
+                      />
                     </FormControl>
 
                     <FormMessage />
@@ -91,7 +103,12 @@ export const BookingForm = ({ data }: BookingFormProps) => {
                 <FormItem className="">
                   <FormLabel>{`${data.fields.email} *`}</FormLabel>
                   <FormControl>
-                    <Input placeholder="Email" type="email" {...field} />
+                    <Input
+                      placeholder="Email"
+                      type="email"
+                      {...field}
+                      className="bg-white"
+                    />
                   </FormControl>
 
                   <FormMessage />
@@ -107,7 +124,7 @@ export const BookingForm = ({ data }: BookingFormProps) => {
                   <FormControl>
                     <Textarea
                       placeholder="Message"
-                      className="resize-none"
+                      className="resize-none bg-white"
                       rows={10}
                       {...field}
                     />
@@ -116,7 +133,7 @@ export const BookingForm = ({ data }: BookingFormProps) => {
                 </FormItem>
               )}
             />
-            <Button type="submit" className="bg-accent">
+            <Button type="submit" className="bg-accent font-bold p-4 w-1/5">
               {data.submit ?? "Submit"}
             </Button>
           </form>

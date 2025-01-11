@@ -1,4 +1,5 @@
 export * from "./ui";
 export * from "./Form";
 export * from "./Typography";
-export * from "./OfficeHours";
+
+export { default as BusinessInfo } from "./BusinessInfo";

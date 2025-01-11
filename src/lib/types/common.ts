@@ -1,8 +1,7 @@
-export interface BookingForm {
+export interface BookingFormType {
   title: string;
   fields: BookingFormFields;
   submit: string;
-  footer?: BookingFormFooter;
 }
 
 export interface BookingFormFields {
@@ -11,12 +10,6 @@ export interface BookingFormFields {
   phoneNumber: string;
   email: string;
   message: string;
-}
-
-export interface BookingFormFooter {
-  overline?: string;
-  title: string;
-  email: string;
 }
 
 export interface ButtonCta {

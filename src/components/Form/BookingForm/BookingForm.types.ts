@@ -1,9 +1,9 @@
-import { BookingForm } from "@/lib/types";
+import { BookingFormType } from "@/lib/types";
 import { z } from "zod";
 
 export interface BookingFormProps {
   className?: string;
-  data: BookingForm;
+  data: BookingFormType;
 }
 
 export const formSchema = z.object({
