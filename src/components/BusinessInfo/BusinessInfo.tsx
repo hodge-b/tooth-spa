@@ -88,7 +88,7 @@ const BusinessInfo = ({ data, socialMedia }: BusinessInfoProps) => {
             <div className="border border-accent my-4"></div>
             {data?.description && <Typography>{data?.description}</Typography>}
             {socialMedia && (
-              <SocialMedia className="mt-20" data={socialMedia} />
+              <SocialMedia className="mt-20" data={socialMedia} renderTitle />
             )}
           </div>
           <div className="border p-4 rounded-md">
