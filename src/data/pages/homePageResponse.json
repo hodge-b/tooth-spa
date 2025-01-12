@@ -97,6 +97,12 @@
           "label": "Instagram",
           "link": "https://www.instagram.com/toothspadh",
           "icon": "Instagram"
+        },
+        {
+          "id": 2,
+          "label": "LinkedIn",
+          "link": "https://www.linkedin.com/toothspadh",
+          "icon": "Linkedin"
         }
       ]
     }

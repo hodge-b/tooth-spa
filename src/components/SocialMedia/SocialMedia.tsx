@@ -7,13 +7,29 @@ export const SocialMedia = ({
   className,
   data,
   renderTitle,
+  align = "center",
+  iconAccent = false,
 }: SocialMediaProps) => {
+  const alignTitle =
+    align === "left"
+      ? "text-left"
+      : align === "right"
+      ? "text-right"
+      : "text-center";
+
+  const alignMedia =
+    align === "left"
+      ? "justify-left"
+      : align === "right"
+      ? "justify-right"
+      : "justify-center";
+
   return (
-    <div className={cn("text-center", className)}>
+    <div className={cn("", alignTitle, className)}>
       {renderTitle && <Typography className="mb-4">{data.title}</Typography>}
-      <div className="flex justify-center">
+      <div className={cn("flex", alignMedia, iconAccent && "text-accent")}>
         <a href={data.medias[0].link}>
-          <Instagram className="scale-110 text-accent" />
+          <Instagram className="scale-110" />
         </a>
       </div>
     </div>

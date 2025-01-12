@@ -1,0 +1,31 @@
+{
+  "data": {
+    "businessInfo": {
+      "siteName": "Tooth Spa Dental Hygiene",
+      "link": "/",
+      "image": {
+        "src": "/images/tooth-spa-logo-compact.png",
+        "alt": "Tooth Spa Dental Hygiene logo",
+        "width": 200,
+        "height": 200
+      }
+    },
+    "menu": [
+      {
+        "id": 1,
+        "label": "Home",
+        "link": "/"
+      },
+      {
+        "id": 2,
+        "label": "Book an Appointment",
+        "link": "#booking-form"
+      },
+      {
+        "id": 3,
+        "label": "Contact Us",
+        "link": "#get-in-touch"
+      }
+    ]
+  }
+}

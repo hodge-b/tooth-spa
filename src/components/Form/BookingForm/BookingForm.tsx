@@ -44,7 +44,7 @@ export const BookingForm = ({ data }: BookingFormProps) => {
   };
 
   return (
-    <div className="w-full p-4 max-w-6xl" id="booking-form">
+    <div className="w-full p-4 md:py-10 max-w-6xl" id="booking-form">
       <Typography variant="h2" className="text-4xl font-bold">
         {data.title}
       </Typography>

@@ -50,6 +50,41 @@ interface OfficeHourSchedule {
   hours: string;
 }
 
+interface HeaderBusinessInfo {
+  siteName: string;
+  link?: string;
+  image: Image;
+}
+
+export interface HeaderMenuItem {
+  id: number;
+  label: string;
+  link: string;
+}
+
+export interface HeaderType {
+  businessInfo: HeaderBusinessInfo;
+  menu: HeaderMenuItem[];
+}
+
 export interface HomePageResponse {
   data: HomePage;
+}
+
+export interface HeaderResponse {
+  data: HeaderType;
+}
+
+interface FooterDevelopedByType {
+  label: string;
+  link: string;
+}
+export interface FooterType {
+  title: string;
+  image: Image;
+  developedBy: FooterDevelopedByType;
+}
+
+export interface FooterResponse {
+  data: FooterType;
 }
