@@ -15,6 +15,8 @@ export interface BookingFormFields {
 export interface ButtonCta {
   label: string;
   link: string;
+  icon?: string;
+  overline?: string;
 }
 
 export interface HeroBanner {

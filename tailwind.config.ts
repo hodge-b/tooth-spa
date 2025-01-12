@@ -11,7 +11,7 @@ export default {
     extend: {
       colors: {
         accent: "var(--accent)",
-        background: "var(--background)",
+        grayBackground: "var(--gray-background)",
         foreground: "var(--foreground)",
       },
       borderRadius: {
