@@ -16,8 +16,8 @@
       }
     },
     "comingSoon": {
-      "title": "Full website coming soon",
-      "subCopy": "We are building something amazing, stay tuned!"
+      "title": "Landing Soon",
+      "subCopy": "In the very near future, our website will be landing here. Until then, you can book appointments below. <br />See you soon."
     },
     "bookingForm": {
       "title": "Book an appointment",
@@ -28,51 +28,65 @@
         "email": "Email",
         "message": "Message"
       },
-      "submit": "Send",
-      "footer": {
-        "overline": "or",
-        "title": "Email",
-        "email": "toothspadh@gmail.com"
-      }
+      "submit": "Send"
     },
-    "officeHours": {
-      "title": "Office Hours",
-      "days": [
-        {
-          "id": 1,
-          "day": "Monday",
-          "hours": "1PM-8PM"
-        },
-        {
-          "id": 2,
-          "day": "Tuesday",
-          "hours": "10AM-8PM"
-        },
-        {
-          "id": 3,
-          "day": "Wednesday",
-          "hours": "3PM-8PM"
-        },
-        {
-          "id": 4,
-          "day": "Thursday",
-          "hours": "1PM-7PM"
-        },
-        {
-          "id": 5,
-          "day": "Friday",
-          "hours": "8AM-12PM"
-        },
-        {
-          "id": 6,
-          "day": "Some Saturday",
-          "hours": "9AM-1PM"
-        }
-      ],
+    "businessInfo": {
+      "title": "Get in touch",
+      "description": "Ready to elevate your dental care experience? At Tooth Spa Dental Hygiene, we bring professional dental hygiene services directly to you with convenience and care. Whether you have questions, need to book an appointment, or want to learn more, we’re here to help. Get in touch with us today!",
+      "officeHours": {
+        "title": "Weekly Hours",
+        "days": [
+          {
+            "id": 1,
+            "day": "Monday",
+            "hours": "1PM-8PM"
+          },
+          {
+            "id": 2,
+            "day": "Tuesday",
+            "hours": "10AM-8PM"
+          },
+          {
+            "id": 3,
+            "day": "Wednesday",
+            "hours": "3PM-8PM"
+          },
+          {
+            "id": 4,
+            "day": "Thursday",
+            "hours": "1PM-7PM"
+          },
+          {
+            "id": 5,
+            "day": "Friday",
+            "hours": "8AM-12PM"
+          },
+          {
+            "id": 6,
+            "day": "Some Saturday",
+            "hours": "9AM-1PM"
+          }
+        ]
+      },
       "location": {
         "title": "Our Location",
         "address": "3413 Wolfedale RD UNIT 15 Mississauga, ON, L5C 1V8"
+      },
+      "contact": {
+        "title": "Contact Us",
+        "email": "toothspadh@gmail.com"
       }
+    },
+    "socialMedia": {
+      "title": "Follow us on social media",
+      "medias": [
+        {
+          "id": 1,
+          "label": "Instagram",
+          "link": "https://www.instagram.com/toothspadh",
+          "icon": "Instagram"
+        }
+      ]
     }
   }
 }

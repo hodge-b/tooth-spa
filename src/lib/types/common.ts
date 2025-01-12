@@ -1,8 +1,7 @@
-export interface BookingForm {
+export interface BookingFormType {
   title: string;
   fields: BookingFormFields;
   submit: string;
-  footer?: BookingFormFooter;
 }
 
 export interface BookingFormFields {
@@ -11,12 +10,6 @@ export interface BookingFormFields {
   phoneNumber: string;
   email: string;
   message: string;
-}
-
-export interface BookingFormFooter {
-  overline?: string;
-  title: string;
-  email: string;
 }
 
 export interface ButtonCta {
@@ -37,4 +30,16 @@ export interface Image {
   alt: string;
   width: number;
   height: number;
+}
+
+export interface SocialMediaType {
+  title?: string;
+  medias: SocialMediaItem[];
+}
+
+export interface SocialMediaItem {
+  id: number;
+  label: string;
+  link: string;
+  icon?: string;
 }

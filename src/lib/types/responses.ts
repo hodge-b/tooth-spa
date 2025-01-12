@@ -1,4 +1,12 @@
-import { HeroBanner } from "./common";
+import { BookingFormType, HeroBanner, SocialMediaType } from "./common";
+
+export interface BusinessInfoType {
+  title: string;
+  description?: string;
+  officeHours: OfficeHours;
+  location: OfficeLocation;
+  contact: OfficeContact;
+}
 
 interface ComingSoon {
   title: string;
@@ -8,16 +16,22 @@ interface ComingSoon {
 export interface HomePage {
   heroBanner: HeroBanner;
   comingSoon: ComingSoon;
-  officeHours: OfficeHours;
+  bookingForm: BookingFormType;
+  businessInfo: BusinessInfoType;
+  socialMedia: SocialMediaType;
+}
+
+export interface OfficeContact {
+  title: string;
+  email: string;
 }
 
 export interface OfficeHours {
   title: string;
   days: OfficeHourSchedule[];
-  location: OfficeHourLocation;
 }
 
-interface OfficeHourLocation {
+interface OfficeLocation {
   title?: string;
   address: string;
 }
