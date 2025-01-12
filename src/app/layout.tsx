@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
+import { Footer, Header } from "@/components";
+
+import headerResponse from "@/data/menus/headerResponse.json";
+import homePageResponse from "@/data/pages/homePageResponse.json";
+import footerResponse from "@/data/footer/footerResponse.json";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,13 +28,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { data: headerData } = headerResponse;
+  const { data: homePageData } = homePageResponse;
+  const { data: footerData } = footerResponse;
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-b from-gray-100 to-gray-200`}
       >
+        <Header data={headerData} socialMedia={homePageData.socialMedia} />
         {children}
         <Toaster className="bg-white z-50" />
+        <Footer data={footerData} menu={headerData.menu} />
       </body>
     </html>
   );

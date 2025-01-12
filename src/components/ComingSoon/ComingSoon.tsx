@@ -16,8 +16,8 @@ export const ComingSoon = ({ className, data }: ComingSoonProps) => {
         className
       )}
     >
-      <div className="flex flex-col justify-center max-w-6xl py-10 p-4 md:p-20 text-white">
-        <div className="mx-auto">
+      <div className="flex flex-col justify-center items-center max-w-6xl py-10 p-4 md:p-20 text-white mx-auto">
+        <div className="w-max mx-auto">
           <Image
             src={image.src}
             alt={image.alt}
@@ -36,7 +36,7 @@ export const ComingSoon = ({ className, data }: ComingSoonProps) => {
           <Typography className="my-5">{buttonCta.overline}</Typography>
         )}
         {buttonCta && (
-          <Link href={buttonCta.link} className="w-max mx-auto">
+          <Link href={buttonCta.link} className="block w-max mx-auto">
             <Button
               className="text-accent border-gray-500 mx-auto hover:bg-gray-400 w-16 h-16 mt-10"
               variant="outline"

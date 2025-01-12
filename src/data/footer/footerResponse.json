@@ -1,0 +1,15 @@
+{
+  "data": {
+    "title": "Site Map",
+    "image": {
+      "src": "/images/tooth-spa-logo.png",
+      "alt": "Tooth Spa Dental Hygiene Logo",
+      "width": 200,
+      "height": 200
+    },
+    "developedBy": {
+      "label": "This website was built by _link!Brad Hodge._/link!",
+      "link": "https://bradleyhodge.ca"
+    }
+  }
+}
