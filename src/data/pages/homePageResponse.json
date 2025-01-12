@@ -16,8 +16,20 @@
       }
     },
     "comingSoon": {
-      "title": "Landing Soon",
-      "subCopy": "In the very near future, our website will be landing here. Until then, you can book appointments below. <br />See you soon."
+      "title": "Coming Soon",
+      "subCopy": "In the very near future, our website will be landing here to help serve you better.",
+      "buttonCta": {
+        "overline": "Pre-book your appointment today!",
+        "label": "ArrowDown",
+        "link": "#booking-form",
+        "icon": "ArrowDown"
+      },
+      "image": {
+        "src": "/images/tooth-spa-logo.png",
+        "alt": "tooth spa logo",
+        "width": 200,
+        "height": 200
+      }
     },
     "bookingForm": {
       "title": "Book an appointment",
