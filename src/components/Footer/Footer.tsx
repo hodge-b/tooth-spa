@@ -54,7 +54,6 @@ export const Footer = ({ className, data, menu }: FooterProps) => {
         <div className="mt-6"></div>
         <SiteMap title={data.title} menu={menu} />
       </div>
-      a
     </div>
   );
 };
