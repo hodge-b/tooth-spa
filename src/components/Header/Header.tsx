@@ -104,13 +104,15 @@ export const Header = ({ className, data, socialMedia }: HeaderProps) => {
   return (
     <HeaderContext.Provider value={{ ...data, ...socialMedia }}>
       <div className={cn("flex justify-between bg-white", className)}>
-        <div className="p-4">
-          <Image
-            src="/images/tooth-spa-logo-compact.png"
-            alt="tooth spa logo compact"
-            width={150}
-            height={100}
-          />
+        <div className="py-4 px-4 md:px-10">
+          <Link href="/">
+            <Image
+              src="/images/tooth-spa-logo-compact.png"
+              alt="tooth spa logo compact"
+              width={150}
+              height={100}
+            />
+          </Link>
         </div>
         <div className="flex shrink md:grow justify-between items-center">
           <div className="block md:hidden w-full h-full">
