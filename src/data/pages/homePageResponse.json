@@ -44,14 +44,14 @@
     },
     "businessInfo": {
       "title": "Get in touch",
-      "description": "Ready to elevate your dental care experience? At Tooth Spa Dental Hygiene, we bring professional dental hygiene services directly to you with convenience and care. Whether you have questions, need to book an appointment, or want to learn more, we’re here to help. Get in touch with us today!",
+      "description": "At Tooth Spa Dental Hygiene, we offer two convenient ways to achieve a brighter, healthier smile. Visit our office for a professional cleaning in a spa-like atmosphere, designed to leave you feeling refreshed and pampered. Prefer the comfort of your own home? Our mobile dental hygiene services bring expert care directly to you. Whether you have questions, want to book an appointment, or learn more, we’re here to help. Get in touch with us today!",
       "officeHours": {
         "title": "Weekly Hours",
         "days": [
           {
             "id": 1,
             "day": "Monday",
-            "hours": "1PM-8PM"
+            "hours": "10AM-7PM"
           },
           {
             "id": 2,
