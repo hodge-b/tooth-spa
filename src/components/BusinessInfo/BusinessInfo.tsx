@@ -80,7 +80,7 @@ const BusinessInfo = ({ data, socialMedia }: BusinessInfoProps) => {
   return (
     <BusinessInfoContext.Provider value={data}>
       <div
-        className="bg-gray-600 w-full text-white flex justify-center"
+        className="bg-gray-600 w-full text-white flex justify-center py-6"
         id="get-in-touch"
       >
         <div className="flex flex-col md:flex-row justify-between p-4 max-w-6xl">
@@ -88,7 +88,7 @@ const BusinessInfo = ({ data, socialMedia }: BusinessInfoProps) => {
             <Typography variant="h2" className="text-4xl font-bold">
               {data.title}
             </Typography>
-            <div className="border border-accent my-4"></div>
+            <div className="border border-accent my-6"></div>
             {data?.description && <Typography>{data?.description}</Typography>}
             {socialMedia && (
               <SocialMedia
@@ -102,7 +102,7 @@ const BusinessInfo = ({ data, socialMedia }: BusinessInfoProps) => {
           <div className="border p-4 rounded-md">
             <OfficeHours className="mt-10" />
             <OfficeLocation className="mt-10" />
-            <OfficeContactUs className="mt-10" />
+            <OfficeContactUs className="my-10" />
           </div>
         </div>
       </div>

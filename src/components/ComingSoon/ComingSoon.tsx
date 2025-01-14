@@ -5,17 +5,13 @@ import Image from "next/image";
 import { Button } from "../ui";
 import { ArrowDown } from "lucide-react";
 import Link from "next/link";
+import { comingSoonVariants } from "./ComingSoon.variants";
 
 export const ComingSoon = ({ className, data }: ComingSoonProps) => {
   const { title, subCopy, image, buttonCta } = data;
 
   return (
-    <div
-      className={cn(
-        "w-full h-screen flex justify-center bg-grayBackground text-center",
-        className
-      )}
-    >
+    <div className={cn(comingSoonVariants(), className)}>
       <div className="flex flex-col justify-center items-center max-w-6xl py-10 p-4 md:p-20 text-white mx-auto">
         <div className="w-max mx-auto">
           <Image

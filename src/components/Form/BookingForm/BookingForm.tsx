@@ -44,7 +44,7 @@ export const BookingForm = ({ data }: BookingFormProps) => {
   };
 
   return (
-    <div className="w-full p-4 md:py-10 max-w-6xl" id="booking-form">
+    <div className="w-full px-6 py-6 md:py-10 max-w-6xl" id="booking-form">
       <Typography variant="h2" className="text-4xl font-bold">
         {data.title}
       </Typography>
@@ -133,7 +133,10 @@ export const BookingForm = ({ data }: BookingFormProps) => {
                 </FormItem>
               )}
             />
-            <Button type="submit" className="bg-accent font-bold p-4 w-1/5">
+            <Button
+              type="submit"
+              className="bg-accent font-bold p-4 w-1/5 hover:bg-gray-400 hover:text-accent"
+            >
               {data.submit ?? "Submit"}
             </Button>
           </form>
