@@ -48,7 +48,7 @@ export const BookingForm = ({ data }: BookingFormProps) => {
       <Typography variant="h2" className="text-4xl font-bold">
         {data.title}
       </Typography>
-      <div className="border border-accent my-5"></div>
+      <div className="border border-accent my-6 w-full md:w-1/2"></div>
       <div className="p-4 max-w-xl mx-auto">
         <Form {...form}>
           <form
