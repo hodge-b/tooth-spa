@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { Typography } from "../Typography";
-import { FooterProps } from "./Footer.types";
+import { FooterProps, SubFooterProps } from "./Footer.types";
 import { HeaderMenuItem } from "@/lib/types";
 import Link from "next/link";
 import Image from "next/image";
@@ -14,7 +14,7 @@ const SiteMap = ({
 }) => {
   const listElements = menu.map((item) => (
     <li key={item.id}>
-      <Link href={item.link} className="underline">
+      <Link href={item.link} className="underline hover:text-accent">
         <Typography>{item.label}</Typography>
       </Link>
     </li>
@@ -29,10 +29,32 @@ const SiteMap = ({
   );
 };
 
-export const Footer = ({ className, data, menu }: FooterProps) => {
-  const updatedDevelopedBy = data.developedBy.label
-    .replace("_link!", `<a href="${data.developedBy.link}">`)
+const SubFooter = ({ copyrightNotice, developedBy }: SubFooterProps) => {
+  const date = new Date();
+
+  const updatedDevelopedBy = developedBy.label
+    .replace(
+      "_link!",
+      `<a href="${developedBy.link}" class="hover:underline hover:text-accent">`
+    )
     .replace("_/link!", "</a>");
+
+  return (
+    <div className="max-w-6xl mx-auto flex flex-col items-center py-4 space-y-4">
+      <div className="flex space-x-2 justify-center">
+        <Typography>&copy;</Typography>
+        <Typography>{`${date.getFullYear()} ${copyrightNotice}`}</Typography>
+      </div>
+      <p
+        className="mt-4 text-sm"
+        dangerouslySetInnerHTML={{ __html: updatedDevelopedBy }}
+      ></p>
+    </div>
+  );
+};
+
+export const Footer = ({ className, data, menu }: FooterProps) => {
+  const { title, developedBy, copyrightNotice, image } = data;
 
   return (
     <div className={cn("w-full bg-grayBackground text-white", className)}>
@@ -40,20 +62,17 @@ export const Footer = ({ className, data, menu }: FooterProps) => {
         <div className="w-full p-4 text-center border-b border-accent md:border-b-0 md:border-r">
           <div className="w-max mx-auto">
             <Image
-              src={data.image.src}
-              alt={data.image.alt}
-              width={data.image.width}
-              height={data.image.height}
+              src={image.src}
+              alt={image.alt}
+              width={image.width}
+              height={image.height}
             />
           </div>
-          <p
-            className="mt-4"
-            dangerouslySetInnerHTML={{ __html: updatedDevelopedBy }}
-          ></p>
         </div>
         <div className="mt-6"></div>
-        <SiteMap title={data.title} menu={menu} />
+        <SiteMap title={title} menu={menu} />
       </div>
+      <SubFooter copyrightNotice={copyrightNotice} developedBy={developedBy} />
     </div>
   );
 };
