@@ -69,7 +69,10 @@ const OfficeContactUs = ({ className }: BusinessInfoChildProps) => {
       <Typography variant="h3" className="mb-4">
         {contact.title}
       </Typography>
-      <a className="underline" href={`mailto:${contact.email}`}>
+      <a
+        className="underline hover:text-accent"
+        href={`mailto:${contact.email}`}
+      >
         {contact.email}
       </a>
     </div>
