@@ -41,10 +41,10 @@ const SubFooter = ({ copyrightNotice, developedBy }: SubFooterProps) => {
 
   return (
     <div className="max-w-6xl mx-auto flex flex-col items-center py-4 space-y-4">
-      <div className="flex space-x-2 justify-center">
-        <Typography>&copy;</Typography>
-        <Typography>{`${date.getFullYear()} ${copyrightNotice}`}</Typography>
-      </div>
+      <Typography className="text-sm md:text-base">
+        &copy; {`${date.getFullYear()} ${copyrightNotice}`}
+      </Typography>
+
       <p
         className="mt-4 text-sm"
         dangerouslySetInnerHTML={{ __html: updatedDevelopedBy }}
