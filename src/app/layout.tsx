@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { Footer, Header } from "@/components";
+import { Analytics } from "@vercel/analytics/next";
 
 import headerResponse from "@/data/menus/headerResponse.json";
 import homePageResponse from "@/data/pages/homePageResponse.json";
@@ -19,9 +20,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Tooth Spa | Dental Hygiene",
+  title: {
+    default: "Tooth Spa Dental Hygiene",
+    template: "%s | Tooth Spa",
+  },
   description:
-    "We bring professional dental hygiene services to your location. Book now for convenient and expert care.",
+    "We offer professional dental hygiene services at our location or we bring this experience directly to you. Book now for convenient and expert care.",
   keywords: [
     "dental",
     "hygiene",
@@ -57,6 +61,7 @@ export default function RootLayout({
         {children}
         <Toaster className="bg-white z-50" />
         <Footer data={footerData} menu={headerData.menu} />
+        <Analytics />
       </body>
     </html>
   );

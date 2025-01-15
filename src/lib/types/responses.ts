@@ -75,7 +75,7 @@ export interface HeaderResponse {
   data: HeaderType;
 }
 
-interface FooterDevelopedByType {
+export interface FooterDevelopedByType {
   label: string;
   link: string;
 }
@@ -83,6 +83,7 @@ export interface FooterType {
   title: string;
   image: Image;
   developedBy: FooterDevelopedByType;
+  copyrightNotice: string;
 }
 
 export interface FooterResponse {
