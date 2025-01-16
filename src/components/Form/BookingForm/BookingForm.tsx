@@ -199,7 +199,11 @@ export const BookingForm = ({ data, workingHours }: BookingFormProps) => {
                 name="time"
                 render={({ field }) => (
                   <FormItem className="flex flex-col w-[240px]">
-                    <FormLabel>{`${data.fields.time} *`}</FormLabel>
+                    <FormLabel
+                      className={cn(
+                        timeRange.length !== 0 ? "text-black" : "text-slate-400"
+                      )}
+                    >{`${data.fields.time} *`}</FormLabel>
                     <FormControl>
                       <TimePicker
                         selected={field.value}
