@@ -18,7 +18,7 @@ export const formSchema = z.object({
     })
   ),
   time: z.string().min(2),
-  message: z.string().min(10),
+  message: z.string(),
 });
 
 export interface FormValues extends z.infer<typeof formSchema> {}

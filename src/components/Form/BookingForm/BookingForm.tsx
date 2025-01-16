@@ -26,7 +26,6 @@ import {
 } from "@/components/ui/popover";
 import { BookingFormProps, formSchema, FormValues } from "./BookingForm.types";
 import { Typography } from "@/components/Typography";
-// import { onSubmitAction } from "@/actions/sendBookingEmail";
 import { CalendarIcon } from "lucide-react";
 import { cn } from "@/lib/utils";
 import TimePicker from "../TimePicker";
@@ -230,7 +229,9 @@ export const BookingForm = ({ data, workingHours }: BookingFormProps) => {
                       {...field}
                     />
                   </FormControl>
-                  <FormDescription>Any additional comments.</FormDescription>
+                  <FormDescription className="text-slate-600">
+                    Any additional comments.
+                  </FormDescription>
                   <FormMessage />
                 </FormItem>
               )}
