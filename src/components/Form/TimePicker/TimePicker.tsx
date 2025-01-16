@@ -14,6 +14,8 @@ const TimePicker = ({
   for (let index = startTime; index < endTime; index++) {
     if (index > 12) {
       options.push(`${index - 12}:00 PM`);
+    } else if (index === 12) {
+      options.push(`${index}:00 PM`);
     } else {
       options.push(`${index}:00 AM`);
     }
