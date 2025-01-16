@@ -35,22 +35,26 @@ export const onSubmitAction = async (
     date: formattedDate,
   };
 
-  // Send email to business.
-  await resend.emails.send({
-    from: sender,
-    to: recipient,
-    subject: "Tooth Spa Booking Request",
-    html: bookingFormTemplate(emailData),
-  });
+  try {
+    // Send email to business.
+    await resend.emails.send({
+      from: sender,
+      to: recipient,
+      subject: "Tooth Spa Appointment Request",
+      html: bookingFormTemplate(emailData),
+    });
 
-  // Send email to client.
-  await resend.emails.send({
-    from: sender,
-    to: formData.email as string,
-    replyTo,
-    subject: "Tooth Spa Booking Confirmation",
-    html: bookingConfirmationTemplate(emailData),
-  });
-
-  return { message: "Appointment booked" };
+    // Send email to client.
+    await resend.emails.send({
+      from: sender,
+      to: formData.email as string,
+      replyTo,
+      subject: "Tooth Spa Appointment Confirmation",
+      html: bookingConfirmationTemplate(emailData),
+    });
+    return { message: "Appointment booked" };
+  } catch (error) {
+    console.error("Error sending email: ", error);
+    return { message: "An unexpected error occurred. Please try again later." };
+  }
 };
