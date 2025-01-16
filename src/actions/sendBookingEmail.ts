@@ -11,18 +11,34 @@ export const onSubmitAction = async (
 ): Promise<{ message: string }> => {
   const formData = Object.fromEntries(data);
   const parsed = formSchema.safeParse(formData);
+  const date = new Date(formData.date as string);
 
   const recipient = process.env.EMAIL_RECIPIENT ?? "";
   const sender = process.env.EMAIL_SENDER ?? "";
 
-  if (!parsed.success) return { message: "Invalid form data" };
+  if (!parsed.success)
+    return { message: "oops - this process did not go through" };
+
+  // Format date for email.
+  const formattedDate = date.toLocaleDateString("en-US", {
+    weekday: "short",
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
+
+  // update data being sent to email.
+  const emailData = {
+    ...formData,
+    date: formattedDate,
+  };
 
   // Send email to business.
   resend.emails.send({
     from: sender,
     to: recipient,
     subject: "Tooth Spa Booking Request",
-    html: bookingFormTemplate(formData),
+    html: bookingFormTemplate(emailData),
   });
 
   return { message: "Appointment booked" };
