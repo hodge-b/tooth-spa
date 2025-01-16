@@ -19,7 +19,7 @@ export const bookingFormTemplate = (data: TemplateFormEntry) => {
               <td align="center">
                 <table role="presentation" cellspacing="0" cellpadding="0" border="0" width="600" style="background: #ffffff; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
                   <tr>
-                    <td style="background: #007BFF; color: #ffffff; padding: 20px; text-align: center; font-size: 24px; font-weight: bold;">
+                    <td style="background: rgb(75, 85, 99); color: #ffffff; padding: 20px; text-align: center; font-size: 24px; font-weight: bold;">
                       ${emailContentTitle}
                     </td>
                   </tr>
