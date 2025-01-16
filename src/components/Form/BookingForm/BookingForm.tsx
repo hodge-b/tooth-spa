@@ -182,7 +182,9 @@ export const BookingForm = ({ data, workingHours }: BookingFormProps) => {
                             field.onChange(selectedDate);
                             setDate(selectedDate);
                           }}
-                          disabled={(date) => date < new Date()}
+                          disabled={(date) =>
+                            date < new Date() || isSunday(date)
+                          }
                           initialFocus
                         />
                       </PopoverContent>
@@ -258,4 +260,15 @@ const convertToFormData = (data: FormValues) => {
   formData.append("time", data.time);
   formData.append("message", data.message);
   return formData;
+};
+
+/**
+ * Utility used to check if date is a Sunday.
+ *
+ * @param date The date to check.
+ *
+ * @return A boolean.
+ */
+const isSunday = (date: Date) => {
+  return date.getDay() === 0;
 };
