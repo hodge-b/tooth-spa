@@ -38,6 +38,8 @@
         "lastName": "Last Name",
         "phoneNumber": "Phone Number",
         "email": "Email",
+        "date": "Date",
+        "time": "Time",
         "message": "Message"
       },
       "submit": "Send"

@@ -44,7 +44,7 @@ interface OfficeLocation {
   address: string;
 }
 
-interface OfficeHourSchedule {
+export interface OfficeHourSchedule {
   id: number;
   day: string;
   hours: string;

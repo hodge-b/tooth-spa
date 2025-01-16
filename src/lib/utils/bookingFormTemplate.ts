@@ -3,6 +3,7 @@ type TemplateFormEntry = {
 };
 
 export const bookingFormTemplate = (data: TemplateFormEntry) => {
+  const { firstName, lastName, email, date, time, message } = data;
   const emailContentTitle = "Appointment Request";
 
   return `
@@ -28,19 +29,31 @@ export const bookingFormTemplate = (data: TemplateFormEntry) => {
                         <tr>
                           <td style="padding: 10px; font-weight: bold; border: 1px solid #ddd;">Name</td>
                           <td style="padding: 10px; border: 1px solid #ddd;">
-                            <p>${data.firstName} ${data.lastName}</P>
+                            <p>${firstName} ${lastName}</P>
                           </td>
                         </tr>  
                         <tr style="background-color: #f1f1f1;">
                           <td style="padding: 10px; font-weight: bold; border: 1px solid #ddd;">Email</td>
                           <td style="padding: 10px; border: 1px solid #ddd;">
-                            ${data.email}
+                            ${email}
+                          </td>
+                        </tr>
+                        <tr>
+                          <td style="padding: 10px; font-weight: bold; border: 1px solid #ddd;">Booking Date</td>
+                          <td style="padding: 10px; border: 1px solid #ddd;">
+                            ${date}
+                          </td>
+                        </tr>
+                        <tr style="background-color: #f1f1f1;">
+                          <td style="padding: 10px; font-weight: bold; border: 1px solid #ddd;">Booking Time</td>
+                          <td style="padding: 10px; border: 1px solid #ddd;">
+                            ${time}
                           </td>
                         </tr>
                         <tr>
                           <td style="padding: 10px; font-weight: bold; border: 1px solid #ddd;">Message</td>
                           <td style="padding: 10px; border: 1px solid #ddd;">
-                            ${data.message}
+                            ${message}
                           </td>
                         </tr>
                       </table>
