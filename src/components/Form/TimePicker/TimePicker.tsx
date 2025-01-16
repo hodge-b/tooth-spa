@@ -29,7 +29,7 @@ const TimePicker = ({
     <select
       className={cn(
         "border-x-8 border-transparent bg-white p-2 shadow rounded-md text-sm",
-        timeRange.length === 0 && "bg-slate-200",
+        timeRange.length === 0 && "bg-slate-100",
         className
       )}
       disabled={timeRange.length === 0}
