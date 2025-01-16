@@ -3,6 +3,7 @@
 import { Resend } from "resend";
 import { formSchema } from "@/components/Form/BookingForm/BookingForm.types";
 import { bookingFormTemplate } from "@/lib/utils/bookingFormTemplate";
+import { bookingConfirmationTemplate } from "@/lib/utils/bookingConfirmationTemplate";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -15,6 +16,7 @@ export const onSubmitAction = async (
 
   const recipient = process.env.EMAIL_RECIPIENT ?? "";
   const sender = process.env.EMAIL_SENDER ?? "";
+  const replyTo = process.env.EMAIL_REPLY_TO ?? "";
 
   if (!parsed.success)
     return { message: "oops - this process did not go through" };
@@ -34,11 +36,20 @@ export const onSubmitAction = async (
   };
 
   // Send email to business.
-  resend.emails.send({
+  await resend.emails.send({
     from: sender,
     to: recipient,
     subject: "Tooth Spa Booking Request",
     html: bookingFormTemplate(emailData),
+  });
+
+  // Send email to client.
+  await resend.emails.send({
+    from: sender,
+    to: formData.email as string,
+    replyTo,
+    subject: "Tooth Spa Booking Confirmation",
+    html: bookingConfirmationTemplate(emailData),
   });
 
   return { message: "Appointment booked" };
