@@ -9,6 +9,8 @@ export interface BookingFormFields {
   lastName: string;
   phoneNumber: string;
   email: string;
+  date: string;
+  time: string;
   message: string;
 }
 

@@ -13,12 +13,13 @@ const SiteMap = ({
   menu: HeaderMenuItem[];
 }) => {
   const listElements = menu.map((item) => (
-    <li key={item.id}>
+    <li key={item.id} className="w-max">
       <Link href={item.link} className="underline hover:text-accent">
         <Typography>{item.label}</Typography>
       </Link>
     </li>
   ));
+
   return (
     <div className="w-full text-left">
       <Typography variant="h3" className="w-full text-center">
