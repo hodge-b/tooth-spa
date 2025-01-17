@@ -7,12 +7,20 @@ import { ArrowDown } from "lucide-react";
 import Link from "next/link";
 import { comingSoonVariants } from "./ComingSoon.variants";
 
-export const ComingSoon = ({ className, data }: ComingSoonProps) => {
+export const ComingSoon = ({
+  className,
+  data,
+  variant = "default",
+}: ComingSoonProps) => {
   const { title, subCopy, image, buttonCta } = data;
 
   return (
-    <div className={cn(comingSoonVariants(), className)}>
-      <div className="flex flex-col justify-center items-center max-w-6xl py-10 p-4 md:p-20 text-white mx-auto">
+    <div className={cn(comingSoonVariants({ variant }), className)}>
+      {/* This element is a mask. */}
+      {variant === "default" && (
+        <div className="absolute w-full h-full z-0 opacity-[.91] bg-grayBackground"></div>
+      )}
+      <div className="flex flex-col justify-center items-center max-w-6xl py-10 p-4 md:p-20 text-white mx-auto z-10">
         <div className="w-max mx-auto">
           <Image
             src={image.src}
