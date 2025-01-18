@@ -48,8 +48,9 @@ const MobileMenu = ({
     </Button>
   ));
 
+  //bg-gradient-to-b from-gray-100 to-gray-400
   return (
-    <div className="absolute top-0 left-0 w-screen h-screen bg-gradient-to-b from-gray-100 to-gray-400 p-4 z-50">
+    <div className="absolute top-0 left-0 w-screen h-screen bg-gray-600 text-white p-4 z-50">
       <div className="text-right mb-10">
         <Button
           variant="ghost"
@@ -64,7 +65,7 @@ const MobileMenu = ({
       {socialMedia && (
         <div className="border-t border-accent my-10">
           <div className="p-4"></div>
-          <SocialMedia className="text-black" data={socialMedia} renderTitle />
+          <SocialMedia data={socialMedia} renderTitle />
         </div>
       )}
     </div>
@@ -78,7 +79,7 @@ const DesktopMenu = () => {
     <Link key={item.id} href={item.link} className="w-full">
       <Button
         variant="ghost"
-        className="w-full h-full hover:bg-gray-100 hover:underline rounded-none"
+        className="w-full h-full hover:bg-gray-600 hover:text-white rounded-none"
       >
         <Typography>{item.label}</Typography>
       </Button>
@@ -92,7 +93,12 @@ const DesktopMenu = () => {
   );
 };
 
-export const Header = ({ className, data, socialMedia }: HeaderProps) => {
+export const Header = ({
+  className,
+  data,
+  socialMedia,
+  limitWidth = false,
+}: HeaderProps) => {
   const [showMenu, setShowMenu] = useState(false);
   const router = useRouter();
 
@@ -103,36 +109,43 @@ export const Header = ({ className, data, socialMedia }: HeaderProps) => {
 
   return (
     <HeaderContext.Provider value={{ ...data, ...socialMedia }}>
-      <div className={cn("flex justify-between bg-white", className)}>
-        <div className="py-4 px-4 md:px-10">
-          <Link href="/">
-            <Image
-              src="/images/tooth-spa-logo-compact.png"
-              alt="tooth spa logo compact"
-              width={150}
-              height={100}
-            />
-          </Link>
-        </div>
-        <div className="flex shrink md:grow justify-between items-center">
-          <div className="block md:hidden w-full h-full">
-            <Button
-              variant="ghost"
-              className="hover:bg-gray-100 rounded-none h-full p-4"
-              onClick={() => setShowMenu(true)}
-            >
-              <Menu className="scale-[1.75]" />
-            </Button>
-          </div>
-          <DesktopMenu />
-          {socialMedia && (
-            <div className="md:mr-10">
-              <SocialMedia
-                className="hidden md:block text-grayBackground"
-                data={socialMedia}
-              />
-            </div>
+      <div className={cn("w-full bg-white", className)}>
+        <div
+          className={cn(
+            "flex justify-between mx-auto",
+            limitWidth && "max-w-6xl"
           )}
+        >
+          <div className="py-4 px-4 md:px-10">
+            <Link href="/">
+              <Image
+                src="/images/tooth-spa-logo-compact.png"
+                alt="tooth spa logo compact"
+                width={150}
+                height={100}
+              />
+            </Link>
+          </div>
+          <div className="flex shrink md:grow justify-between items-center">
+            <div className="block md:hidden w-full h-full">
+              <Button
+                variant="ghost"
+                className="hover:bg-gray-100 rounded-none h-full p-4"
+                onClick={() => setShowMenu(true)}
+              >
+                <Menu className="scale-[1.75]" />
+              </Button>
+            </div>
+            <DesktopMenu />
+            {socialMedia && (
+              <div className="md:mr-10">
+                <SocialMedia
+                  className="hidden md:block text-grayBackground"
+                  data={socialMedia}
+                />
+              </div>
+            )}
+          </div>
         </div>
       </div>
       {showMenu &&
