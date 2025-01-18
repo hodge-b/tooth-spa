@@ -57,7 +57,11 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gradient-to-b from-gray-100 to-gray-200`}
       >
-        <Header data={headerData} socialMedia={homePageData.socialMedia} />
+        <Header
+          data={headerData}
+          socialMedia={homePageData.socialMedia}
+          limitWidth
+        />
         {children}
         <Toaster className="bg-white z-50" />
         <Footer data={footerData} menu={headerData.menu} />
